@@ -1,5 +1,4 @@
 #include<iostream>
-#include<string>
 using namespace std;
 
 const int specializations_max = 20 ;
