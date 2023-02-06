@@ -48,12 +48,10 @@ void list_patients(){
             cout << "-----------------------" << endl ;
             cout << "there are " << specialize[i] << " patients in " << i + 1 << endl ;
             int &temp = specialize[i];
-            int tempp = urgent_count[i] ;
             for ( int j = 0 ; j < temp ; j++ ){
                 cout << name_list[i][j] << " " << flush ;
-                if ( tempp > 0 ){
+                if ( urgent_count[i] > j ){
                     cout << "urgent" << endl ;
-                    tempp-- ;
                 } else {
                     cout << "regular" << endl ;
                 }
@@ -75,6 +73,9 @@ void Next_patient(){
             name_list[specialization][i] = name_list[specialization][i+1] ;
         }
         specialize[specialization]-- ;
+        if ( urgent_count[specialization] > 0 ){
+            urgent_count[specialization]-- ;
+        }
     }
 }
 
