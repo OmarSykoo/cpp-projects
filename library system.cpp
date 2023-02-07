@@ -207,6 +207,7 @@ void who_borrowed(){
     bool state = false ;
     string temp ;
     book loc ;
+    cout << "Enter book name : " << flush ;
     cin >> temp ;
     for ( int i = 0 ; i < book_counter ; i++ ){
         if ( temp == arr_books[i].name ) {
